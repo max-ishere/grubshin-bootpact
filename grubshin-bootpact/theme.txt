@@ -1,0 +1,131 @@
+title-text: ""
+terminal-left: "0%"
+terminal-top: "183" # Do not cover the logo
+terminal-width: "100%"
+terminal-height: "100%-183" # Do not cover the logo
+terminal-font: "HYWenHei Regular 20"
+desktop-color: "black"
+
+# The top logo that says:
+#
+#       GruBShiN
+#       bootpact
+#
++ image {
+    top = 40
+    left = 50%-200
+    width = 400
+    height = 133
+
+    file = grubshin-bootpact-logo.png
+} 
+
++ boot_menu {
+    left = 15%
+    top = 200
+    width = 70%
+    height = 100%-510
+
+    item_font = "HYWenHei Regular 32"
+    item_color = #bbbbbb
+    item_height = 64
+    item_padding = 20
+    item_spacing = 40
+
+    selected_item_color = white
+    selected_item_pixmap_style = "highlight-box/*.png"
+
+    icon_width = 64
+    icon_height = 64
+    item_icon_space = 40
+}
+
+# BEGIN Tip text
+
+# We split the text into 3 labels because GRUB cannot use newlines. 
+# In testing the newline character looked like LF in a box
+
+  + label {
+    left = 20%
+    top = 100%-280
+    width = 60%
+    height = 100
+
+    font = "HYWenHei Regular 32"
+    color = white
+    align = center
+    id = "__timeout__"
+    text = "Booting selected entry in %d"
+  }
+
+  + label {
+    left = 0%
+    top = 100%-220
+    height = 100
+    width = 100%
+
+#   A different font size does not actually work, but what if it does later?
+    font = "HYWenHei Regular 20"
+    align = center
+    text = "Use the ↑ and ↓ keys to select which entry is highlighted."
+    color = #bbbbbb
+  }
+
+  + label {
+    left = 0%
+    top = 100%-180
+    height = 100
+    width = 100%
+
+    font = "HYWenHei Regular 20"
+    align = center
+    text = "Press enter to boot the selected OS, 'e' to edit the commands"
+    color = #bbbbbb
+  }
+
+  + label {
+    left = 0%
+    top = 100%-140
+    height = 100
+    width = 100%
+
+    font = "HYWenHei Regular 20"
+    align = center
+    text = "before booting or 'c' for a command-line."
+    color = #bbbbbb
+  }
+# END Tip text
+
+# BEGIN elemental progress bar
+
+#   This a mask that should be rendered over the progress bar.
+#   We use a mask because the progress bar strectches the texture
+#   as it grows [====>   ] and we want a nice row of elemental signs.
+#   The mask is only visible if the underlying progress bar exists.
+#   Any elements in its area however may get covered up.
+  + image {
+    left = 50%-175
+    top=100%-60
+    width = 350
+    height = 47 # This is 1 px more that the image (and you wont notice it) because the progress bar cannot be less than 46? Idk but it would be visible below or above the mask if you have this at 46
+
+    file = elements.png
+  }
+
+#   Shows the timeout until boot
+  + progress_bar {
+#   This should be the same as the image above
+    left = 50%-175
+    height = 47 # 47 seems to be the minimum height for some reason
+    top=100%-61 # image.top+1 seems to be the best placement
+    width = 350
+
+    id = "__timeout__"
+    text = "" # Explicit setting
+
+    fg_color = white
+    bg_color = #333333
+    border_color = black
+  }
+# END elemental progress bar
+
