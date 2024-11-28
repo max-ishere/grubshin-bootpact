@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
-    grub-theme.url = "path:/home/max_ishere/Projects/grub-theme.nix";
+    grub-theme.url = "github:max-ishere/grub-theme.nix?ref=main";
     grub-theme.inputs.nixpkgs.follows = "nixpkgs";
   };
 
