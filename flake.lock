@@ -9,15 +9,16 @@
       "locked": {
         "lastModified": 1733163819,
         "narHash": "sha256-fC+v0YIcU/lY0Hu9qCZIhT6Pc9uJUclC31kQ0Gg2vjo=",
-        "ref": "refs/heads/main",
+        "owner": "max-ishere",
+        "repo": "grub-theme.nix",
         "rev": "9e0c57a412d72e97487f40d8569d3910d41cbc74",
-        "revCount": 2,
-        "type": "git",
-        "url": "file:///home/max_ishere/Projects/grub-theme.nix"
+        "type": "github"
       },
       "original": {
-        "type": "git",
-        "url": "file:///home/max_ishere/Projects/grub-theme.nix"
+        "owner": "max-ishere",
+        "ref": "main",
+        "repo": "grub-theme.nix",
+        "type": "github"
       }
     },
     "hywenhei-extended-font": {
@@ -39,11 +40,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1732837521,
-        "narHash": "sha256-jNRNr49UiuIwaarqijgdTR2qLPifxsVhlJrKzQ8XUIE=",
+        "lastModified": 1733015953,
+        "narHash": "sha256-t4BBVpwG9B4hLgc6GUBuj3cjU7lP/PJfpTHuSqE+crk=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "970e93b9f82e2a0f3675757eb0bfc73297cc6370",
+        "rev": "ac35b104800bff9028425fec3b6e8a41de2bbfff",
         "type": "github"
       },
       "original": {

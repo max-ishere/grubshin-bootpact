@@ -3,8 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
-    # grubTheme.url = "github:max-ishere/grub-theme.nix?ref=main";
-    grubTheme.url = "/home/max_ishere/Projects/grub-theme.nix";
+    grubTheme.url = "github:max-ishere/grub-theme.nix?ref=main";
     grubTheme.inputs.nixpkgs.follows = "nixpkgs";
     hywenhei-extended-font = {
       url = "github:cawa-93/HYWenHei-Extended-Font?ref=main";
@@ -52,6 +51,9 @@
               vscodevim.vim
               jnoortheen.nix-ide
               ms-vscode.hexeditor
+              github.vscode-github-actions
+              bierner.markdown-preview-github-styles
+              #me-dutour-mathieu.vscode-github-actions
             ];
           })
           nixd
