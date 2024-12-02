@@ -4,6 +4,7 @@
   grubTheme,
   component,
   colors,
+  colorscheme,
 }: let
   inherit (grubTheme) mkComponent irel;
   resoltions = import ./resolutions {inherit hywenhei-extended-font;};
@@ -16,7 +17,7 @@ in
   }: let
     layout = import ./layout.nix {inherit grubTheme lib line menu elements fonts;};
   in
-    component.bundleThemeTxtAssets "teleport-${resolution}"
+    component.bundleThemeTxtAssets "teleport-${colorscheme}-${resolution}"
     ({
       image,
       font,
