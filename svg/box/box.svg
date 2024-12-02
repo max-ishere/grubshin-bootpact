@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="90" height="90">
+  <!-- Left wall -->
+  <image href="corner.svg" id="nw" x="0" y="0" width="30" height="30" />
+  <image href="edge.svg" id="w" x="0" y="30" width="30" height="30" />
+  <g id="sw" transform="rotate(-90 45 45)">
+    <image href="corner.svg" x="0" y="0" width="30" height="30" />
+  </g>
+
+  <!-- Center slice -->
+  <g id="n" transform="rotate(90 45 45)">
+    <image href="edge.svg" x="0" y="30" width="30" height="30" />
+  </g>
+  <image href="center.svg" id="c" x="30" y="30" width="30" height="30" />
+  <g id="s" transform="rotate(-90 45 45)">
+    <image href="edge.svg" x="0" y="30" width="30" height="30" />
+  </g>
+
+  <!-- Right wall -->
+  <g id="ne" transform="rotate(90 45 45)">
+    <image href="corner.svg" x="0" y="0" width="30" height="30" />
+  </g>
+  <g id="e" transform="rotate(180 45 45)">
+    <image href="edge.svg" id="e" x="0" y="30" width="30" height="30" />
+  </g>
+  <g id="se" transform="rotate(180 45 45)">
+    <image href="corner.svg" x="0" y="0" width="30" height="30" />
+  </g>
+</svg>
