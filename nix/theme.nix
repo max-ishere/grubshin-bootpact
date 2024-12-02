@@ -8,7 +8,7 @@
   grubTheme,
   hywenhei-extended-font,
 }:
-builtins.mapAttrs (_: colors: let
+builtins.mapAttrs (colorscheme: colors: let
   svg = import ./svg {inherit stdenv runCommand lib resvg colors writeText;};
   component = import ./component {
     inherit stdenv runCommand lib grub2 colors svg grubTheme;
@@ -16,7 +16,7 @@ builtins.mapAttrs (_: colors: let
 in {
   inherit svg component;
   layout = import ./layout {
-    inherit lib component grubTheme colors hywenhei-extended-font;
+    inherit lib component grubTheme colors hywenhei-extended-font colorscheme;
   };
 })
 (import ./colorschemes.nix)

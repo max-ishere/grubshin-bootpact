@@ -39,6 +39,11 @@
       grubTheme = grubTheme.lib;
     };
 
+    # Internal CI build stuff
+    _ci = {
+      release = pkgs.callPackage ./ci/release.nix {grubshin-bootpact = lib.filterAttrs (name: _: !(name == "override" || name == "overrideDerivation")) self.packages.${system};};
+    };
+
     devShells.${system} = {
       default = pkgs.mkShell {
         buildInputs = with pkgs; [
