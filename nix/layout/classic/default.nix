@@ -4,6 +4,7 @@
   component,
   grubTheme,
   colors,
+  colorscheme,
 }: let
   inherit (grubTheme) mkComponent;
   resoltions = import ./resolutions {inherit hywenhei-extended-font;};
@@ -17,7 +18,7 @@ in
   }: let
     layout = import ./layout.nix {inherit grubTheme lib logo line elements fonts;};
   in
-    component.bundleThemeTxtAssets "classic-${resolution}"
+    component.bundleThemeTxtAssets "classic-${colorscheme}-${resolution}"
     ({
       image,
       font,

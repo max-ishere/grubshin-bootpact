@@ -7,18 +7,17 @@
         ]
       },
       "locked": {
-        "lastModified": 1732750192,
-        "narHash": "sha256-Dd17p65wUmA6QCGiPqxw0BCdWpsVdSGRznNXIaKQu/A=",
-        "owner": "max-ishere",
-        "repo": "grub-theme.nix",
-        "rev": "7274df40b1658d7f575888f06ce64a35e17dcfc9",
-        "type": "github"
+        "lastModified": 1733163819,
+        "narHash": "sha256-fC+v0YIcU/lY0Hu9qCZIhT6Pc9uJUclC31kQ0Gg2vjo=",
+        "ref": "refs/heads/main",
+        "rev": "9e0c57a412d72e97487f40d8569d3910d41cbc74",
+        "revCount": 2,
+        "type": "git",
+        "url": "file:///home/max_ishere/Projects/grub-theme.nix"
       },
       "original": {
-        "owner": "max-ishere",
-        "ref": "main",
-        "repo": "grub-theme.nix",
-        "type": "github"
+        "type": "git",
+        "url": "file:///home/max_ishere/Projects/grub-theme.nix"
       }
     },
     "hywenhei-extended-font": {
