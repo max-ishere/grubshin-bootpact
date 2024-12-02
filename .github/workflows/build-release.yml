@@ -1,0 +1,81 @@
+name: "Build release"
+on:
+  push:
+    branches: main
+    tags: v*.*.*
+  pull_request:
+    branches: main
+    
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: nix build
+    steps:
+    - uses: actions/checkout@v4
+    - uses: cachix/install-nix-action@v27
+      with:
+        github_access_token: ${{ secrets.GITHUB_TOKEN }}
+    - run: nix build .#_ci.release
+    - id: zip
+      run: |
+        ref="${{github.ref_name}}"
+        ref="${ref//\//.}"
+
+        release="grubshin-bootpact-$ref"
+        cp -rL result "$release"
+
+        artefact="grubshin-bootpact-$ref.zip"
+        zip -r "$artefact" "$release"
+
+        echo "artefact=$artefact" >> "$GITHUB_OUTPUT"
+
+    - name: Create Release
+      id: create_release
+      if: github.ref == 'refs/heads/main'
+      uses: softprops/action-gh-release@v2
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        name: ${{ github.ref_name }} Release 
+        tag_name: ${{ github.ref_name }}
+        draft: ${{ !startsWith(github.ref, 'refs/tags/') }}
+        discussion_category_name: announcements
+        generate_release_notes: true
+        fail_on_unmatched_files: true
+        files: |
+          ${{ steps.zip.outputs.artefact }}
+        body: |
+          <p align="center">
+            <img
+              src="https://raw.githubusercontent.com/max-ishere/grubshin-bootpact/${{ github.sha }}/.github/logo.png" 
+              alt="Grubshin Bootpact project logo" 
+              height="100" />
+          </p>
+
+          # Version ${{ github.ref_name }} Released!
+
+          ## Installation
+
+          Here is the TLDR of the installation instructions ([Full instuctions](https://github.com/max-ishere/grubshin-bootpact/blob/${{ github.sha }}/INSTALLATION.md)):
+
+          - Download the release zip (`${{ steps.zip.outputs.artefact }}`). It contains all the variants of the theme.
+          - Unzip and copy the variant you like to `/boot/grub/themes/grubshin-bootpact`.
+          > [!IMPORTANT]
+          > Make sure that after the theme is copied `theme.txt` is in 
+          > `/boot/grub/themes/grubshin-bootpact/theme.txt`. Otherwise GRUB will not be able to find it.
+          - Add this to `/etc/default/grub`:
+            ```
+            GRUB_THEME="/boot/grub/themes/grubshin-bootpact/theme.txt"
+            ```
+
+          If its your first time installing see the full instructions using the link above.
+
+          > [!TIP]
+          > You can install multiple variants of the theme but only 1 can be active. Select the variant by
+          > changing the `GRUB_THEME` variable in `/etc/default/grub`
+
+          ## Release notes
+
+          View the detailed release notes in the linked discussion (Join Discussion button below).
