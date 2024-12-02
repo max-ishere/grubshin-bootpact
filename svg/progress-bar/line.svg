@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- That line at the bottom of the menu -->
+
+<svg
+   width="1"
+   height="2"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+   <path
+     d="M 0,1 H 1"
+     class="elements-empty-stroke" 
+     stroke-width="2px" />
+</svg>

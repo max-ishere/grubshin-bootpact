@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   version="1.1"
+   id="svg1"
+   xml:space="preserve"
+   width="512"
+   height="512"
+   sodipodi:docname="manjaro.svg"
+   inkscape:version="1.3.2 (091e20ef0f, 2023-11-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><defs
+     id="defs1" /><sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ff12df"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.81711048"
+     inkscape:cx="152.36618"
+     inkscape:cy="248.43642"
+     inkscape:window-width="1906"
+     inkscape:window-height="1036"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1" /><path
+     id="rect1340-7-8-2"
+     class="bright-fill"
+     style="fill-rule:evenodd;stroke-width:23.2727;stroke-linecap:round;stroke-linejoin:round;paint-order:stroke fill markers"
+     d="M 46.545403,0 C 20.759295,0 0,20.759295 0,46.545403 V 465.45456 c 0,25.78634 20.759295,46.54539 46.545403,46.54539 H 139.63646 V 139.63621 H 325.8181 V 0 Z M 372.36376,0 v 511.99995 h 93.09082 C 491.24066,511.99995 512,491.2409 512,465.45456 V 46.545403 C 512,20.759295 491.24066,0 465.45458,0 Z M 186.18187,186.18187 V 511.99995 H 325.8181 V 186.18187 Z"
+     inkscape:label="Logo" /></svg>

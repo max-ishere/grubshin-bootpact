@@ -1,29 +1,50 @@
 {
   "nodes": {
-    "grub-theme": {
+    "grubTheme": {
       "inputs": {
         "nixpkgs": [
           "nixpkgs"
         ]
       },
       "locked": {
-        "lastModified": 1732811228,
-        "narHash": "sha256-HHFOMj9FKXZcXmgVy6wC+B/264DQydxtNErfodhrTF4=",
-        "path": "/home/max_ishere/Projects/grub-theme.nix",
-        "type": "path"
+        "lastModified": 1732750192,
+        "narHash": "sha256-Dd17p65wUmA6QCGiPqxw0BCdWpsVdSGRznNXIaKQu/A=",
+        "owner": "max-ishere",
+        "repo": "grub-theme.nix",
+        "rev": "7274df40b1658d7f575888f06ce64a35e17dcfc9",
+        "type": "github"
       },
       "original": {
-        "path": "/home/max_ishere/Projects/grub-theme.nix",
-        "type": "path"
+        "owner": "max-ishere",
+        "ref": "main",
+        "repo": "grub-theme.nix",
+        "type": "github"
+      }
+    },
+    "hywenhei-extended-font": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1706958192,
+        "narHash": "sha256-zzRUVv+OmINrvhOkQWZQ6EjjsqQMO2oAiOKE7je1F6U=",
+        "owner": "cawa-93",
+        "repo": "HYWenHei-Extended-Font",
+        "rev": "4377078bad15b06e68576cab2173d7467398afe7",
+        "type": "github"
+      },
+      "original": {
+        "owner": "cawa-93",
+        "ref": "main",
+        "repo": "HYWenHei-Extended-Font",
+        "type": "github"
       }
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1732521221,
-        "narHash": "sha256-2ThgXBUXAE1oFsVATK1ZX9IjPcS4nKFOAjhPNKuiMn0=",
+        "lastModified": 1732837521,
+        "narHash": "sha256-jNRNr49UiuIwaarqijgdTR2qLPifxsVhlJrKzQ8XUIE=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "4633a7c72337ea8fd23a4f2ba3972865e3ec685d",
+        "rev": "970e93b9f82e2a0f3675757eb0bfc73297cc6370",
         "type": "github"
       },
       "original": {
@@ -35,7 +56,8 @@
     },
     "root": {
       "inputs": {
-        "grub-theme": "grub-theme",
+        "grubTheme": "grubTheme",
+        "hywenhei-extended-font": "hywenhei-extended-font",
         "nixpkgs": "nixpkgs"
       }
     }
