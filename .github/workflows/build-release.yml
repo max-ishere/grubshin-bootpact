@@ -63,7 +63,7 @@ jobs:
 
           # Version ${{ github.ref_name }} Released!
 
-          [Showcase](https://github.com/max-ishere/grubshin-bootpact/blob/${{ github.sha }}/SHOWCASE.md)
+          [**Showcase**](https://github.com/max-ishere/grubshin-bootpact/blob/${{ github.sha }}/SHOWCASE.md#screenshots)
 
           ## Installation
 

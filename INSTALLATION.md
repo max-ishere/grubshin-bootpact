@@ -6,8 +6,7 @@
 
 > [!TIP]
 > If you want to see how the theme looks before you install it, there are some methods to do so in
-> [showcase](SHOWCASE.md).
-<!-- TODO: Link to the showcase header -->
+> [showcase](SHOWCASE.md#previewing-the-themes).
 
 ## NixOS (Flakes)
 
@@ -85,7 +84,7 @@ GRUB_TERMINAL_OUTPUT=gfxterm
 GRUB_GFXMODE="1920x1080,auto"
 GRUB_GFXPAYLOAD_LINUX=keep
 # Set what variant you want here
-GRUB_THEME="/boot/grub/themes/VARIANT/theme.txt"
+GRUB_THEME="/boot/grub/themes/grubshin-bootpact/theme.txt"
 ```
 
 ## Uninstalling
