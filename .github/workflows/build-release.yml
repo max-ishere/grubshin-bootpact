@@ -113,5 +113,5 @@ jobs:
           View the detailed release notes in the linked discussion (Join Discussion button below).
 
     - name: Attach a discussion to a release
-      if: startsWith(github.ref_name, '/ref/tags/')
+      if: startsWith(github.ref_name, '/refs/tags/')
       run: gh release edit --discussion-category "Announcements" ${{ github.ref_name }}
