@@ -11,7 +11,7 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-    name: nix build
+    name: Build a release preview
     steps:
     - name: Checkout
       uses: actions/checkout@v4
@@ -54,16 +54,36 @@ jobs:
         files: |
           ${{ steps.zip.outputs.artefact }}
         body: |
-          <p align="center">
-            <img
-              src="https://raw.githubusercontent.com/max-ishere/grubshin-bootpact/${{ github.sha }}/.github/logo.png" 
-              alt="Grubshin Bootpact project logo" 
-              height="100" />
-          </p>
-
           # Version ${{ github.ref_name }} Released!
 
-          [**Showcase**](https://github.com/max-ishere/grubshin-bootpact/blob/${{ github.sha }}/SHOWCASE.md#screenshots)
+          <p align="center">
+            View the large images at
+            <a href="https://github.com/max-ishere/grubshin-bootpact/blob/${{ github.sha }}/SHOWCASE.md#screenshots">
+              SHOWCASE.md
+            </a>
+          </p>
+
+          <table>
+          <tr>
+            <th>
+              <img src="https://github.com/max-ishere/grubshin-bootpact/blob/${{ github.sha }}/screenshots/teleport-night-720.png"/>
+            </th><th>
+              <img src="https://github.com/max-ishere/grubshin-bootpact/blob/${{ github.sha }}/screenshots/classic-night-720.png" />
+            </th>
+          </tr><tr>
+            <th>
+              <img src="https://github.com/max-ishere/grubshin-bootpact/blob/${{ github.sha }}/screenshots/teleport-day-720.png" />
+            </th><th>
+              <img src="https://github.com/max-ishere/grubshin-bootpact/blob/${{ github.sha }}/screenshots/classic-day-720.png" />
+            </th>
+          </tr><tr>
+            <th>
+              <img src="https://github.com/max-ishere/grubshin-bootpact/blob/${{ github.sha }}/screenshots/teleport-abyss-720.png" />
+            </th><th>
+              <img src="https://github.com/max-ishere/grubshin-bootpact/blob/${{ github.sha }}/screenshots/classic-abyss-720.png" />
+            </th>
+          </tr>
+          </table>
 
           ## Installation
 
