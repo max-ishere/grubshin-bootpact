@@ -48,8 +48,7 @@ jobs:
         name: ${{ github.ref_name }} Release 
         tag_name: ${{ github.ref_name }}
         draft: ${{ !startsWith(github.ref, 'refs/tags/') }}
-        discussion_category_name: Announcements
-        prerelease: true
+        prerelease: ${{ contains(github.ref_name, '-rc.') }}
         generate_release_notes: true
         fail_on_unmatched_files: true
         files: |
@@ -112,3 +111,7 @@ jobs:
           ## Release notes
 
           View the detailed release notes in the linked discussion (Join Discussion button below).
+
+    - name: Attach a discussion to a release
+      if: startsWith(github.ref_name, '/ref/tags/')
+      run: gh release edit --discussion-category "Announcements" ${{ github.ref_name }}
