@@ -2,14 +2,29 @@
 
 > [!CAUTION]
 > Before installation on hardware it is recomended to practice in a VM and having a rescue USB stick ready with your
-> Linux distribution. Theme installation is a safe process if done right, but you better be safe than sorry.
+> Linux distribution. Theme installation is a safe process if done right, but better be safe than sorry.
 
 > [!TIP]
 > If you want to see how the theme looks before you install it, there are some methods to do so in
 > [showcase](SHOWCASE.md).
 <!-- TODO: Link to the showcase header -->
 
-## Generic instructions
+## NixOS (Flakes)
+
+1. Add this repo as a flake input.
+2. Set [`boot.loader.grub.theme`](https://search.nixos.org/options?channel=24.11&show=boot.loader.grub.theme&from=0&size=50&sort=relevance&type=packages&query=boot.loader.grub+theme) 
+
+   ```nix
+   { inputs, ... }: {
+      boot.loader.grub.theme = let
+        colorsheme = "night";
+        layout = "teleport";
+        resolution = "1920x1080";
+      in inputs.grubshin-bootpact.${colorsheme}.${layout}.${resolution};
+   }
+   ```
+
+## Other Linux distributions
 
 1. Download a [release from GitHub](https://github.com/max-ishere/grubshin-bootpact/releases/latest).
 2. If you have not installed themes before, you might have to [enable themes in GRUB](#enable-themes)
