@@ -48,7 +48,8 @@ jobs:
         name: ${{ github.ref_name }} Release 
         tag_name: ${{ github.ref_name }}
         draft: ${{ !startsWith(github.ref, 'refs/tags/') }}
-        discussion_category_name: announcements
+        discussion_category_name: Announcements
+        prerelease: true
         generate_release_notes: true
         fail_on_unmatched_files: true
         files: |
