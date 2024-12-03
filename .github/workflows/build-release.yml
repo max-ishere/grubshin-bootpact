@@ -13,23 +13,31 @@ jobs:
     runs-on: ubuntu-latest
     name: nix build
     steps:
-    - uses: actions/checkout@v4
-    - uses: cachix/install-nix-action@v27
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Install Nix
+      uses: cachix/install-nix-action@v27
       with:
         github_access_token: ${{ secrets.GITHUB_TOKEN }}
-    - run: nix build .#_ci.release
-    - id: zip
+    - name: Build a release
+      run: nix build .#_ci.release
+    - name: Create a ZIP package
+      id: zip
       run: |
         ref="${{github.ref_name}}"
         ref="${ref//\//.}"
+        echo "::debug::Git ref resolved to slashless '$ref'"
 
         release="grubshin-bootpact-$ref"
         cp -rL result "$release"
+        echo "::debug::Created a dereferenced release directory '$release'"
 
         artefact="grubshin-bootpact-$ref.zip"
         zip -r "$artefact" "$release"
+        echo "::debug::Generated release artefact '$artefact'"
 
         echo "artefact=$artefact" >> "$GITHUB_OUTPUT"
+        echo "::debug::Release artefacts saved to step outputs"
 
     - name: Create Release
       id: create_release
@@ -55,16 +63,21 @@ jobs:
 
           # Version ${{ github.ref_name }} Released!
 
+          [Showcase](https://github.com/max-ishere/grubshin-bootpact/blob/${{ github.sha }}/SHOWCASE.md)
+
           ## Installation
 
           Here is the TLDR of the installation instructions ([Full instuctions](https://github.com/max-ishere/grubshin-bootpact/blob/${{ github.sha }}/INSTALLATION.md)):
 
           - Download the release zip (`${{ steps.zip.outputs.artefact }}`). It contains all the variants of the theme.
           - Unzip and copy the variant you like to `/boot/grub/themes/grubshin-bootpact`.
+
           > [!IMPORTANT]
           > Make sure that after the theme is copied `theme.txt` is in 
           > `/boot/grub/themes/grubshin-bootpact/theme.txt`. Otherwise GRUB will not be able to find it.
+
           - Add this to `/etc/default/grub`:
+
             ```
             GRUB_THEME="/boot/grub/themes/grubshin-bootpact/theme.txt"
             ```
