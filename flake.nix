@@ -18,10 +18,6 @@
     hywenhei-extended-font,
   }: let
     system = "x86_64-linux";
-    unfreePkgs = import nixpkgs {
-      inherit system;
-      config.allowUnfree = true; # like this
-    };
     pkgs = nixpkgs.legacyPackages.${system};
     inherit (nixpkgs) lib;
   in {
@@ -46,18 +42,6 @@
     devShells.${system} = {
       default = pkgs.mkShell {
         buildInputs = with pkgs; [
-          (unfreePkgs.vscode-with-extensions.override {
-            vscodeExtensions = with vscode-extensions; [
-              vscodevim.vim
-              jnoortheen.nix-ide
-              ms-vscode.hexeditor
-              github.vscode-github-actions
-              bierner.markdown-preview-github-styles
-              #me-dutour-mathieu.vscode-github-actions
-            ];
-          })
-          nixd
-
           inkscape
           resvg
         ];
