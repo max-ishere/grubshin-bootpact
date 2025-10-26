@@ -50,7 +50,7 @@ only difference is that it is implemented in Nix and not python.
 | classic     | **Classic**  | A touched up version of the 0.0.1 look. Very convinient to use with multiple boot entries. |
 | teleport    | **Teleport** | Very similar to classic, but mimics the teleport loading screen a lot better.              |
 
-> [!WARN]
+> [!WARNING]
 > Due to a bug in GRUB, the Teleport layout may be laggy. This is caused by the Teleport layout, and the only fix is
 > switching to the Classic layout. Or you can patch GRUB to fix the cause of the lag.
 >
