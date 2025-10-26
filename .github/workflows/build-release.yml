@@ -66,21 +66,27 @@ jobs:
           <table>
           <tr>
             <th>
-              <img src="https://github.com/max-ishere/grubshin-bootpact/blob/${{ github.sha }}/screenshots/teleport-night-720.png"/>
+              <img src="https://github.com/max-ishere/grubshin-bootpact/blob/${{ github.sha }}/screenshots/teleport-night-720.png"
+                title="Teleport (Night)" alt="Teleport layout in the Night colorscheme." />
             </th><th>
-              <img src="https://github.com/max-ishere/grubshin-bootpact/blob/${{ github.sha }}/screenshots/classic-night-720.png" />
+              <img src="https://github.com/max-ishere/grubshin-bootpact/blob/${{ github.sha }}/screenshots/classic-night-720.png"
+                title="Classic (Night)" alt="Classic layout in the Night colorscheme." />
             </th>
           </tr><tr>
             <th>
-              <img src="https://github.com/max-ishere/grubshin-bootpact/blob/${{ github.sha }}/screenshots/teleport-day-720.png" />
+              <img src="https://github.com/max-ishere/grubshin-bootpact/blob/${{ github.sha }}/screenshots/teleport-day-720.png"
+                title="Teleport (Day)" alt="Teleport layout in the Day colorscheme." />
             </th><th>
-              <img src="https://github.com/max-ishere/grubshin-bootpact/blob/${{ github.sha }}/screenshots/classic-day-720.png" />
+              <img src="https://github.com/max-ishere/grubshin-bootpact/blob/${{ github.sha }}/screenshots/classic-day-720.png"
+                title="Classic (Day)" alt="Classic layout in the Day colorscheme." />
             </th>
           </tr><tr>
             <th>
-              <img src="https://github.com/max-ishere/grubshin-bootpact/blob/${{ github.sha }}/screenshots/teleport-abyss-720.png" />
+              <img src="https://github.com/max-ishere/grubshin-bootpact/blob/${{ github.sha }}/screenshots/teleport-abyss-720.png"
+                title="Teleport (Abyss)" alt="Teleport layout in the Abyss colorscheme." />
             </th><th>
-              <img src="https://github.com/max-ishere/grubshin-bootpact/blob/${{ github.sha }}/screenshots/classic-abyss-720.png" />
+              <img src="https://github.com/max-ishere/grubshin-bootpact/blob/${{ github.sha }}/screenshots/classic-abyss-720.png"
+                title="Classic (Abyss)" alt="Classic layout in the Abyss colorscheme." />
             </th>
           </tr>
           </table>

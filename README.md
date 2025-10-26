@@ -14,25 +14,32 @@ A GRUB theme inspired by Genshin Impact's teleportation loading screen.
 
 ## Showcase
 
-<img src="screenshots/teleport-night-720.png"/>
-
+<img src="screenshots/teleport-night-720.png"
+  title="Teleport (Night)" alt="Teleport layout in the Night colorscheme." />
+  
 <p align="center">View the large images at <a href="SHOWCASE.md#screenshots">SHOWCASE.md</a></p>
 
 <table>
 <tr>
   <th>
-    <img src="screenshots/teleport-day-720.png" />
+    <img src="screenshots/teleport-day-720.png"
+      title="Teleport (Day)" alt="Teleport layout in the Day colorscheme." />
   </th><th>
-    <img src="screenshots/teleport-abyss-720.png" />
+    <img src="screenshots/teleport-abyss-720.png"
+      title="Teleport (Abyss)" alt="Teleport layout in the Abyss colorscheme." />
   </th><th>
-    <img src="screenshots/classic-night-720.png" />
+    <img src="screenshots/classic-night-720.png"
+      title="Classic (Night)" alt="Classic layout in the Night colorscheme." />
   </th><th>
-    <img src="screenshots/classic-day-720.png" />
+    <img src="screenshots/classic-day-720.png"
+      title="Classic (Day)" alt="Classic layout in the Day colorscheme." />
   </th><th>
-    <img src="screenshots/classic-abyss-720.png" />
+    <img src="screenshots/classic-abyss-720.png"
+      title="Classic (Abyss)" alt="Classic layout in the Abyss colorscheme." />
   </th>
 </tr>
 </table>
+
 
 ## Installation
 

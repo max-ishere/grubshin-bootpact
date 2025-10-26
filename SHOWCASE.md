@@ -54,24 +54,30 @@ only difference is that it is implemented in Nix and not python.
 
 ### Teleport (Night)
 
-<img src="screenshots/teleport-night-720.png" />
+<img src="screenshots/teleport-night-720.png"
+  title="Teleport (Night)" alt="Teleport layout in the Night colorscheme." />
 
 ### Teleport (Day)
 
-<img src="screenshots/teleport-day-720.png" />
+<img src="screenshots/teleport-day-720.png"
+  title="Teleport (Day)" alt="Teleport layout in the Day colorscheme." />
 
 ### Teleport (Abyss)
 
-<img src="screenshots/teleport-abyss-720.png" />
+<img src="screenshots/teleport-abyss-720.png"
+  title="Teleport (Abyss)" alt="Teleport layout in the Abyss colorscheme." />
 
 ### Classic (Night)
 
-<img src="screenshots/classic-night-720.png" />
+<img src="screenshots/classic-night-720.png"
+  title="Classic (Night)" alt="Classic layout in the Night colorscheme." />
 
 ### Classic (Day)
 
-<img src="screenshots/classic-day-720.png" />
+<img src="screenshots/classic-day-720.png"
+  title="Classic (Day)" alt="Classic layout in the Day colorscheme." />
 
 ### Classic (Abyss)
 
-<img src="screenshots/classic-abyss-720.png" />
+<img src="screenshots/classic-abyss-720.png"
+  title="Classic (Abyss)" alt="Classic layout in the Abyss colorscheme." />
