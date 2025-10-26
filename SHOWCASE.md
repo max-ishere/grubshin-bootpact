@@ -1,7 +1,7 @@
 # Theme showcase
 
 > [!NOTE]
-> Scroll down for screenshots.
+> [Scroll down](#screenshots) for screenshots.
 
 ## Previewing the themes
 
@@ -49,6 +49,14 @@ only difference is that it is implemented in Nix and not python.
 |-------------|--------------|--------------------------------------------------------------------------------------------|
 | classic     | **Classic**  | A touched up version of the 0.0.1 look. Very convinient to use with multiple boot entries. |
 | teleport    | **Teleport** | Very similar to classic, but mimics the teleport loading screen a lot better.              |
+
+> [!WARN]
+> Due to a bug in GRUB, the Teleport layout may be laggy. This is caused by the Teleport layout, and the only fix is
+> switching to the Classic layout. Or you can patch GRUB to fix the cause of the lag.
+>
+> The cause of the issue is the presence of multiple (2) `boot_menu` components. GRUB doesn't handle this well. The
+> first boot menu is the central image, and the second one is located above the "Use up and down keys to select an
+> entry" text. During startup, you don't see that boot menu because it is covered by the "Booting in ..." countdown.
 
 ## Screenshots
 
