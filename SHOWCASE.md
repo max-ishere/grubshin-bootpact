@@ -10,10 +10,10 @@
 If you're on Nix you just have to run one command:
 
 ```sh
-nix build "github:max-ishere/grubshin-bootpact#$colors.$layout.$resolution.preview-theme"
+nix run "github:max-ishere/grubshin-bootpact#$colors.$layout.$resolution.preview-theme"
 
 # Example
-nix build "github:max-ishere/grubshin-bootpact#night.teleport.1920x1080.preview-theme"
+nix run "github:max-ishere/grubshin-bootpact#night.teleport.1920x1080.preview-theme"
 ```
 
 Where colors, layout and resolution can be obtained from the tables below.
