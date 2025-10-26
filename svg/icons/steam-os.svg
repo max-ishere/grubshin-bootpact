@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+   Source:
+   https://steamcdn-a.akamaihd.net/steamcommunity/public/images/steamworks_docs/english/Steam_Deck_Logo_TM.eps
+   (https://partner.steamgames.com/doc/marketing/branding)
+
+   ©2025 Valve Corporation. Steam and the Steam logo are trademarks and/or registered trademarks of Valve Corporation in
+   the U.S. and/or other countries.
+-->
+<!-- Cleaned up with Inkscape -->
+
+<svg
+   version="1.1"
+   id="svg1"
+   width="200"
+   height="200"
+   viewBox="0 0 200 200"
+   xmlns="http://www.w3.org/2000/svg">
+  <path
+     id="shell"
+     class="bright-fill"
+     d="m 75,200 v -35.89775 c 35.34549,0 64.10337,-28.75495 64.10337,-64.10157 C 139.10337,64.65407 110.34549,35.89775 75,35.89775 V 0 C 130.13984,0 175,44.85985 175,100.00068 175,155.14015 130.13984,200 75,200" />
+  <path
+     id="center"
+     class="medium-fill"
+     d="m 75,50.09974 c 27.61448,0 50,22.38674 50,50.00102 0,27.6143 -22.38552,49.99966 -50,49.99966 -27.61448,0 -50,-22.38536 -50,-49.99966 0,-27.61428 22.38552,-50.00102 50,-50.00102" />
+</svg>
