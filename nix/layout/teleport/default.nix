@@ -6,7 +6,7 @@
   colors,
   colorscheme,
 }: let
-  inherit (grubTheme) mkComponent irel;
+  inherit (grubTheme) mkComponent irel percent;
   resoltions = import ./resolutions {inherit hywenhei-extended-font;};
 in
   lib.flip lib.mapAttrs resoltions (resolution: {
@@ -40,6 +40,12 @@ in
       globalProperties = {
         title-text = "";
         desktop-color = colors.background;
+
+        terminal-left = "0";
+        terminal-top = "0";
+        terminal-width = percent 100;
+        terminal-height = percent 100;
+
       };
       components = let
         menuTextWidth = headerFont.size * 27; # Rougly 600px @ 22pt font (1080p default)
@@ -116,7 +122,7 @@ in
             'c' for a command-line and ESC to return to previous menu.''))
         ++ [
           (mkComponent "image" (line // layout.line-left))
-          (mkComponent "image" (layout.elements // elements))
+          (mkComponent "image" (elements // layout.elements))
           (mkComponent "progress_bar" (layout.elements
             // {
               id = "__timeout__";
