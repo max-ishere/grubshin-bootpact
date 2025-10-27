@@ -21,7 +21,7 @@
       mkdir -p "$out"
       cd "$out"
       mkdir -p "$(dirname ${lib.escapeShellArg "${name}"})"
-      cp -rL ${lib.escapeShellArg "${path}"} ${lib.escapeShellArg "${name}"}
+      cp -rL ${lib.escapeShellArg path} ${lib.escapeShellArg name}
     '')
     assets;
 in
