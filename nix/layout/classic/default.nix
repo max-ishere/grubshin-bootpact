@@ -6,7 +6,7 @@
   colors,
   colorscheme,
 }: let
-  inherit (grubTheme) mkComponent;
+  inherit (grubTheme) mkComponent percent;
   resoltions = import ./resolutions {inherit hywenhei-extended-font;};
 in
   lib.flip lib.mapAttrs resoltions (resolution: {
@@ -43,6 +43,11 @@ in
       globalProperties = {
         title-text = "";
         desktop-color = colors.background;
+
+        terminal-left = "0";
+        terminal-top = "0";
+        terminal-width = percent 100;
+        terminal-height = percent 100;
       };
       components =
         [

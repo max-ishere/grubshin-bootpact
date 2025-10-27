@@ -45,7 +45,6 @@ in
         terminal-top = "0";
         terminal-width = percent 100;
         terminal-height = percent 100;
-
       };
       components = let
         menuTextWidth = headerFont.size * 27; # Rougly 600px @ 22pt font (1080p default)
