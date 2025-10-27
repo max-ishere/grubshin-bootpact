@@ -6,7 +6,7 @@
   colors,
   colorscheme,
 }: let
-  inherit (grubTheme) mkComponent irel percent;
+  inherit (grubTheme) mkComponent rel irel percent;
   resoltions = import ./resolutions {inherit hywenhei-extended-font;};
 in
   lib.flip lib.mapAttrs resoltions (resolution: {
@@ -47,7 +47,8 @@ in
         terminal-height = percent 100;
       };
       components = let
-        menuTextWidth = headerFont.size * 27; # Rougly 600px @ 22pt font (1080p default)
+        # Puts the start of the boot entry label in a nice spot relative to the tip text below it
+        menuCenterOffsetLeft = 300;
       in
         [
           (mkComponent "boot_menu" (menu
@@ -70,11 +71,14 @@ in
               align = "center";
             }))
 
+          # This progress bar covers up the second boot menu where the title of the selected entry is displayed.
+          # If it is not present, or not sized to cover the boot menu, you will see both the entry title and the boot
+          # countdown in the same place.
           (mkComponent "progress_bar" (
             layout.countdown
             // {
-              left = irel 50 (menuTextWidth / 2);
-              width = menuTextWidth;
+              left = irel 50 menuCenterOffsetLeft;
+              width = rel 50 menuCenterOffsetLeft;
               height = headerFont.size;
 
               id = "__timeout__";
@@ -89,8 +93,8 @@ in
           (mkComponent "boot_menu" (
             layout.countdown
             // {
-              left = irel 50 (menuTextWidth / 2);
-              width = menuTextWidth;
+              left = irel 50 menuCenterOffsetLeft;
+              width = rel 50 menuCenterOffsetLeft;
 
               icon_width = 0;
               icon_height = 0;
