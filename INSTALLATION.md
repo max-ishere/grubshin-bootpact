@@ -1,7 +1,7 @@
 # Installation instructions
 
 > [!CAUTION]
-> Before installation on hardware it is recomended to practice in a VM and having a rescue USB stick ready with your
+> Before installation on hardware it is recommended to practice in a VM and having a rescue USB stick ready with your
 > Linux distribution. Theme installation is a safe process if done right, but better be safe than sorry.
 
 > [!TIP]
@@ -45,8 +45,8 @@ You can now reboot your system and check out your new theme.
 
 ## Enable themes
 
-GRUB by default is not configured to use themes. `grub-mkconfig` will tell you a theme was found, but GRUB doesnt try to
-use it.
+GRUB by default is not configured to use themes. `grub-mkconfig` will tell you a theme was found, but GRUB doesn't try
+to use it.
 
 Here are the settings you have to replace, and if they are not present in the config then add them in. This is a
 reference I used to come up with this list:
@@ -92,8 +92,5 @@ GRUB_THEME="/boot/grub/themes/grubshin-bootpact/theme.txt"
 1. Update or remove `GRUB_THEME`.
 2. Remove the directories associated with the theme from `/boot/grub/themes`
 
-## Getting support
 
-You can file an issue that is related to the theme itself in the issues tab on GitHub.
 
-If you have further questions about installing, create a discussion in the Q/A section.

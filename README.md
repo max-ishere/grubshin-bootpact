@@ -44,3 +44,9 @@ A GRUB theme inspired by Genshin Impact's teleportation loading screen.
 ## Installation
 
 Instructions documented in [INSTALLATION.md](INSTALLATION.md).
+
+## Getting support
+
+You can file an issue that is related to the theme itself in the issues tab on GitHub.
+
+If you have further questions about installing, create a discussion in the Q/A section.
