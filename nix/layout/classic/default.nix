@@ -18,7 +18,7 @@ in
   }: let
     layout = import ./layout.nix {inherit grubTheme lib logo line elements fonts;};
   in
-    component.bundleThemeTxtAssets "classic-${colorscheme}-${resolution}"
+    component.bundleThemeTxtAssets "grubshin-bootpact-classic-${colorscheme}-${resolution}"
     ({
       image,
       font,

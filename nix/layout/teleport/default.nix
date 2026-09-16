@@ -17,7 +17,7 @@ in
   }: let
     layout = import ./layout.nix {inherit grubTheme lib line menu elements fonts;};
   in
-    component.bundleThemeTxtAssets "teleport-${colorscheme}-${resolution}"
+    component.bundleThemeTxtAssets "grubshin-bootpact-teleport-${colorscheme}-${resolution}"
     ({
       image,
       font,
