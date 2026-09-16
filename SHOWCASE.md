@@ -35,6 +35,13 @@ only difference is that it is implemented in Nix and not python.
 | 1280x720    | 720p        |
 | 1980x1080   | 1080p       |
 
+> [!TIP]
+> The only difference between the resolutions is the size of some items, such as the icons, logo and the font. Pick
+> whichever looks best on your monitor.
+>
+> The 720p theme is meant for smaller screens so that more entries fit in the Classic layout and the Teleport layout
+> looks closer to the sizes in game.
+
 ## Colorschemes
 
 | `nix build` | Name      | Description                                              |
@@ -47,7 +54,7 @@ only difference is that it is implemented in Nix and not python.
 
 | `nix build` | Name         | Description                                                                                |
 |-------------|--------------|--------------------------------------------------------------------------------------------|
-| classic     | **Classic**  | A touched up version of the 0.0.1 look. Very convinient to use with multiple boot entries. |
+| classic     | **Classic**  | A touched up version of the 0.0.1 look. Very convenient to use with multiple boot entries. |
 | teleport    | **Teleport** | Very similar to classic, but mimics the teleport loading screen a lot better.              |
 
 > [!WARNING]
