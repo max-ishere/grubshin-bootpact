@@ -43,6 +43,9 @@
 
 You can now reboot your system and check out your new theme.
 
+There is a known issue with UKI setups using the `uki` GRUB command. See the [Icons for UKI entries](#icons-for-uki-entries)
+section for steps to work around the GRUB limitations.
+
 ## Enable themes
 
 GRUB by default is not configured to use themes. `grub-mkconfig` will tell you a theme was found, but GRUB doesn't try
@@ -87,10 +90,71 @@ GRUB_GFXPAYLOAD_LINUX=keep
 GRUB_THEME="/boot/grub/themes/grubshin-bootpact/theme.txt"
 ```
 
+## Icons for UKI entries
+
+UKI stands for [Unified Kernel Image](https://wiki.archlinux.org/title/Unified_kernel_image). It is a type of `.efi`
+file that stores the kernel, initramfs and the kernel command-line in one file. GRUB has support for auto-discovering
+these files using the [`uki` command](https://www.gnu.org/software/grub/manual/grub/html_node/uki.html).
+
+Based on the test in [Issue #16](https://github.com/max-ishere/grubshin-bootpact/issues/16), the `uki` command generates
+menu entries of the following format at boot time:
+
+```shell
+chainloader <path to UKI> <kernel command-line>
+```
+
+Unfortunately, such generated entries do not include any class (icon name) specification and GRUB does not seem to have
+any default class defined:
+
+- [Theme file format#Boot Menu](https://www.gnu.org/software/grub/manual/grub/html_node/Theme-file-format.html#Boot-Menu)
+- [`menuentry` command](https://www.gnu.org/software/grub/manual/grub/html_node/menuentry.html)
+
+Although this [GRUB tutorial](https://web.archive.org/web/20230719032327/http://wiki.rosalab.ru/en/index.php/Grub2_theme_tutorial)
+mentions the `os` class as the default, it seems to be more of a convention to include the `--class os` code in the
+`/etc/grub.d/` files rather than an actual fallback in the GRUB code.
+
+However, this can be worked around relatively easily. Based on the
+[`chainloader` command docs](https://www.gnu.org/software/grub/manual/grub/html_node/Chain_002dloading.html),
+it is possible to wrap this definition in a `menuentry`. So, you can just define a styled version of the UKIs you use.
+Here's an example of how to modify the default config on Arch Linux:
+
+**/etc/grub.d/15_uki**
+
+```shell
+#! /bin/sh
+set -e
+
+cat << EOF
+if [ "\$grub_platform" = "efi" ]; then
+  # Manually declare the entries that should have the icon
+  menuentry "Arch Linux" --class arch {
+    chainloader (hd0,gpt1)/EFI/Linux/arch-linux.efi
+  }
+
+  # Have grub generate the UKI entries as well (expected to cause duplicates of chainloader items above).
+  # If you don't want to see duplicates, use a `submenu` to contain all the UKIs:
+  # https://www.gnu.org/software/grub/manual/grub/html_node/submenu.html
+  uki
+fi
+EOF
+```
+
+On other distributions, the file name and location may be different.
+
+The title can be changed from `"Arch Linux"` to any custom text. The `--class` value controls the icon used for the entry.
+The list of supported icons can be checked in the `icons/` folder of the theme or in the [[./svg/icons/]] folder of this
+repository.
+
+The path to the EFI file generally uses this format: `(<disk>,<partition>)/EFI/Linux/<file.efi>`. The easiest way to
+check the `disk` and `partition` values is using the <kbd>e</kbd> key while in GRUB.
+
+You could also wrap the `uki` in a `menuentry` (just like the `chainloader`), which would apply the same title and class
+to all the generated items. Unfortunately, `menuentry` must overwrite the title of all wrapped entries, so the title
+embedded in the UKI file will be disregarded using this method.
+
+Depending on the setup, the `uki` command can be completely removed and replaced with manual UKI file definitions.
+
 ## Uninstalling
 
 1. Update or remove `GRUB_THEME`.
 2. Remove the directories associated with the theme from `/boot/grub/themes`
-
-
-
