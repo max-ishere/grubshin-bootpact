@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg
+   width="512"
+   height="512"
+   viewBox="0 0 512 512"
+   version="1.1"
+   id="windows-icon"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <g id="windows-logo" class="bright-fill">
+    <rect id="rect-top-left" x="41" y="41" width="198" height="198" rx="10" ry="10" />
+    <rect id="rect-top-right" x="273" y="41" width="198" height="198" rx="10" ry="10" />
+    <rect id="rect-bottom-left" x="41" y="273" width="198" height="198" rx="10" ry="10" />
+    <rect id="rect-bottom-right" x="273" y="273" width="198" height="198" rx="10" ry="10" />
+  </g>
+</svg>
